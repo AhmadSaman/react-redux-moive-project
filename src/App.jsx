@@ -11,6 +11,7 @@ import Bookmarks from './pages/Bookmarks';
 import Header from './components/shared/NavBar';
 
 function App() {
+	console.log('test');
 	return (
 		<div className="App">
 			<Header />
