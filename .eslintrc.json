@@ -24,6 +24,8 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "no-param-reassign": 0
+    
   }
 }
