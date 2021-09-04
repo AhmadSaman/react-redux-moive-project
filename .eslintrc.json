@@ -25,6 +25,7 @@
         "endOfLine": "auto"
       }
     ],
-    "no-console": "error"
+    "no-param-reassign": 0
+    
   }
 }
