@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import { AiOutlineUser } from 'react-icons/ai';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LOGO from '../../images/logo.png';
 
 function Header() {
@@ -38,29 +38,23 @@ function Header() {
 						<Nav>
 							<Nav.Link>
 								<p className="menu-item">
-									<BrowserRouter>
-										<Link to="/" className="link">
-											Home
-										</Link>
-									</BrowserRouter>
+									<Link to="/" className="link">
+										Home
+									</Link>
 								</p>
 							</Nav.Link>
 							<Nav.Link>
 								<p className="menu-item">
-									<BrowserRouter>
-										<Link to="/actors" className="link">
-											Actors
-										</Link>
-									</BrowserRouter>
+									<Link to="/actors" className="link">
+										Actors
+									</Link>
 								</p>
 							</Nav.Link>
 							<Nav.Link>
 								<p className="menu-item">
-									<BrowserRouter>
-										<Link to="/movies" className="link">
-											Movies
-										</Link>
-									</BrowserRouter>
+									<Link to="/movies" className="link">
+										Movies
+									</Link>
 								</p>
 							</Nav.Link>
 							<NavDropdown
@@ -69,11 +63,9 @@ function Header() {
 							>
 								<NavDropdown.Item>
 									<p className="">
-										<BrowserRouter>
-											<Link to="/" className="menu-item-dropdown">
-												Action
-											</Link>
-										</BrowserRouter>{' '}
+										<Link to="/" className="menu-item-dropdown">
+											Action
+										</Link>
 									</p>
 								</NavDropdown.Item>
 							</NavDropdown>
