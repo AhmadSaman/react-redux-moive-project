@@ -8,13 +8,14 @@ import Movie from './pages/Movie';
 import Actors from './pages/Actors';
 import Actor from './pages/Actor';
 import Bookmarks from './pages/Bookmarks';
-import Header from './components/shared/NavBar';
+import Signup from './pages/auth/Signup';
+import Signin from './pages/auth/Signin';
+// import Header from './components/shared/NavBar';
 
 function App() {
-	console.log('test');
 	return (
 		<div className="App">
-			<Header />
+			{/* <Header /> */}
 
 			<BrowserRouter>
 				<Switch>
@@ -24,6 +25,8 @@ function App() {
 					<Route exact path="/actors" component={Actors} />
 					<Route exact path="/actor/:id" component={Actor} />
 					<Route exact path="/bookmarks" component={Bookmarks} />
+					<Route exact path="/signup" component={Signup} />
+					<Route exact path="/login" component={Signin} />
 				</Switch>
 			</BrowserRouter>
 		</div>
