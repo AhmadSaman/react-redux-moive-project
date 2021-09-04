@@ -36,9 +36,6 @@ function MostPopular({ Movies }) {
 								)
 						)}
 					</Row>
-					<a className="seeMore" href="home">
-						seeMore...
-					</a>
 				</Container>
 			</div>
 		</>
