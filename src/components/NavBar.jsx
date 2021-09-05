@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import { AiOutlineUser } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import LOGO from '../../images/logo.png';
+import LOGO from '../images/logo.png';
 
 function Header() {
 	const [scroll, setscroll] = useState(false);
@@ -36,27 +36,21 @@ function Header() {
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav>
-							<Nav.Link>
-								<p className="menu-item">
-									<Link to="/" className="link">
-										Home
-									</Link>
-								</p>
-							</Nav.Link>
-							<Nav.Link>
-								<p className="menu-item">
-									<Link to="/actors" className="link">
-										Actors
-									</Link>
-								</p>
-							</Nav.Link>
-							<Nav.Link>
-								<p className="menu-item">
-									<Link to="/movies" className="link">
-										Movies
-									</Link>
-								</p>
-							</Nav.Link>
+							<p className="menu-item">
+								<Link to="/" className="link">
+									Home
+								</Link>
+							</p>
+							<p className="menu-item">
+								<Link to="/actors" className="link">
+									Actors
+								</Link>
+							</p>
+							<p className="menu-item">
+								<Link to="/movies" className="link">
+									Movies
+								</Link>
+							</p>
 							<NavDropdown
 								title={<span className="link">Genre</span>}
 								id="collasible-nav-dropdown"
@@ -76,27 +70,25 @@ function Header() {
 						className="justify-content-end "
 					>
 						<Nav>
-							<Nav.Link style={{ display: 'none' }}>
-								<NavDropdown
-									title={
-										<span className="menu-item user-account">
-											<AiOutlineUser />
-										</span>
-									}
-									id="collasible-nav-dropdown"
-								>
-									<NavDropdown.Item>
-										<p className="menu-item-dropdown">BookMark </p>
-									</NavDropdown.Item>
-									<NavDropdown.Item>
-										<p className="menu-item-dropdown">My Profile </p>
-									</NavDropdown.Item>
-									<Dropdown.Divider />
-									<NavDropdown.Item>
-										<p className="menu-item-dropdown">LogOut </p>
-									</NavDropdown.Item>
-								</NavDropdown>
-							</Nav.Link>
+							<NavDropdown
+								title={
+									<span className="menu-item user-account">
+										<AiOutlineUser />
+									</span>
+								}
+								id="collasible-nav-dropdown"
+							>
+								<NavDropdown.Item>
+									<p className="menu-item-dropdown">BookMark </p>
+								</NavDropdown.Item>
+								<NavDropdown.Item>
+									<p className="menu-item-dropdown">My Profile </p>
+								</NavDropdown.Item>
+								<Dropdown.Divider />
+								<NavDropdown.Item>
+									<p className="menu-item-dropdown">LogOut </p>
+								</NavDropdown.Item>
+							</NavDropdown>
 							<button type="submit" className="Login-btn">
 								LOGIN
 							</button>
