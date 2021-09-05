@@ -31,6 +31,10 @@ export const fetchActors = createAsyncThunk(
 		return axios.get(actors).then((response) => ({ actors: response.data }));
 	}
 );
+export const fetchMovie = createAsyncThunk('moviesStore/fetchActors', (id) => {
+	const movie = `https://api.themoviedb.org/3/movie/${id}?api_key=c8b25cf3edbf1c810fc3746d2e6f7d62&language=en-US`;
+	return axios.get(movie).then((response) => response.data);
+});
 // Reducer
 const moviesSlice = createSlice({
 	name: 'moviesReducer',
@@ -39,6 +43,7 @@ const moviesSlice = createSlice({
 		movies: [],
 		actors: [],
 		trending: [],
+		movie: [],
 		loading: true,
 	},
 	extraReducers: {
@@ -66,6 +71,13 @@ const moviesSlice = createSlice({
 		[fetchActors.fulfilled](state, action) {
 			const { actors } = action.payload;
 			state.actors = actors;
+			state.loading = false;
+		},
+		[fetchMovie.pending](state) {
+			state.loading = true;
+		},
+		[fetchMovie.fulfilled](state, action) {
+			state.movie = action.payload;
 			state.loading = false;
 		},
 	},

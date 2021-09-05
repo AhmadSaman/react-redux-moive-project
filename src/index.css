@@ -15,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .App {
-  overflow-x: hidden;
   background-color: black;
 }
 
@@ -65,7 +64,11 @@ code {
   color: var(--primary-color);
 }
 
-.main-sec {
+.slider{
+  height: 700px;
+  width: 100%;
+}
+.main-sec{
   height: 700px;
   width: 100%;
 }
@@ -81,7 +84,7 @@ code {
   color: white;
   transition: width 1s, height 1s, margin 1s;
 }
-.movie-info h1 {
+.movie-info .movie-h1 {
   font-family: "MyFont";
   font-size: 100px;
 }
@@ -183,7 +186,7 @@ code {
   background-color: white;
   color: var(--primary-color);
   left: 80%;
-  margin-top: 50px;
+  margin-top: 20px;
   
 }
 
@@ -194,7 +197,6 @@ code {
   color: white;
   
 }
-
 
 @media only screen and (max-width: 1000px) {
   .movie-info {

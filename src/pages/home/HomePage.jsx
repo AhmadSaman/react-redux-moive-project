@@ -12,7 +12,6 @@ function HomePage() {
 	useEffect(() => {
 		dispatch(fetchTrendingAndPopular());
 	}, []);
-	console.log(states);
 
 	if (states.moviesStore.loading) {
 		return <p>Loading</p>;
@@ -20,7 +19,7 @@ function HomePage() {
 
 	return (
 		<div className="App">
-			<MainSection Movie={states.moviesStore.popular.results[9]} />
+			<MainSection Movie={states.moviesStore.popular.results} />
 
 			<MostPopular Movies={states.moviesStore.popular.results} />
 			<Trend Movies={states.moviesStore.trending.results} />
