@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import { AiOutlineUser } from 'react-icons/ai';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LOGO from '../images/logo.png';
+import { logout } from '../store/duck/userReducer';
 
 function Header() {
+	const states = useSelector((state) => state);
+	const dispatch = useDispatch();
 	const [scroll, setscroll] = useState(false);
 	useEffect(() => {
 		const handleScroll = () => {
@@ -19,7 +23,10 @@ function Header() {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
-
+	function handleLogout() {
+		dispatch(logout());
+	}
+	console.log(states.userStore.uid);
 	return (
 		<>
 			<Navbar
@@ -70,28 +77,38 @@ function Header() {
 						className="justify-content-end "
 					>
 						<Nav>
-							<NavDropdown
-								title={
-									<span className="menu-item user-account">
-										<AiOutlineUser />
-									</span>
-								}
-								id="collasible-nav-dropdown"
-							>
-								<NavDropdown.Item>
-									<p className="menu-item-dropdown">BookMark </p>
-								</NavDropdown.Item>
-								<NavDropdown.Item>
-									<p className="menu-item-dropdown">My Profile </p>
-								</NavDropdown.Item>
-								<Dropdown.Divider />
-								<NavDropdown.Item>
-									<p className="menu-item-dropdown">LogOut </p>
-								</NavDropdown.Item>
-							</NavDropdown>
-							<button type="submit" className="Login-btn">
-								LOGIN
-							</button>
+							{states.userStore.uid ? (
+								<NavDropdown
+									title={
+										<span className="menu-item user-account">
+											<AiOutlineUser />
+										</span>
+									}
+									id="collasible-nav-dropdown"
+								>
+									<NavDropdown.Item>
+										<p className="menu-item-dropdown">BookMark </p>
+									</NavDropdown.Item>
+									<NavDropdown.Item>
+										<p className="menu-item-dropdown">My Profile </p>
+									</NavDropdown.Item>
+									<Dropdown.Divider />
+									<NavDropdown.Item onClick={() => handleLogout()}>
+										LogOut
+									</NavDropdown.Item>
+								</NavDropdown>
+							) : (
+								''
+							)}
+							{!states.userStore.uid ? (
+								<button to="/signin" type="submit" className="Login-btn">
+									<Link to="/login" className="text-white text-decoration-none">
+										LOGIN
+									</Link>
+								</button>
+							) : (
+								''
+							)}
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
