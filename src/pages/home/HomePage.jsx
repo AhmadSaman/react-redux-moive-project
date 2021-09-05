@@ -12,7 +12,6 @@ function HomePage() {
 	useEffect(() => {
 		dispatch(fetchTrendingAndPopular());
 	}, []);
-	console.log(states);
 
 	if (states.moviesStore.loading) {
 		return <p>Loading</p>;
