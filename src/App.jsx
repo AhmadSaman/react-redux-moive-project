@@ -10,8 +10,8 @@ import Actors from './pages/Actors';
 import Actor from './pages/Actor';
 import Bookmarks from './pages/Bookmarks';
 import Signup from './pages/auth/Signup';
-import Signin from './pages/auth/Signin';
 import Header from './components/NavBar';
+import Signin from './pages/auth/Signin';
 import Footer from './components/Footer';
 
 function App() {

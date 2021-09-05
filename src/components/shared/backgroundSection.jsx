@@ -1,10 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { BsPlayFill } from 'react-icons/bs';
-import { IoIosAdd } from 'react-icons/io';
-import { Link } from 'react-router-dom';
 
-function MainSection({ Movie }) {
+function BackgroundSection({ Movie }) {
 	return (
 		<>
 			<div
@@ -19,20 +16,6 @@ function MainSection({ Movie }) {
 						<h1>{Movie.title}</h1>
 						<p>{Movie.media_type}</p>
 						<p>Vote Avarage {Movie.vote_average}</p>
-
-						<div>
-							<div className="add">
-								<Link to={`/movie/${Movie.id}`}>
-									<button className="play-button" type="submit">
-										<BsPlayFill className="icon" />
-									</button>
-								</Link>
-
-								<button type="submit">
-									<IoIosAdd className="icon" />
-								</button>
-							</div>
-						</div>
 					</div>
 				</Fade>
 			</div>
@@ -40,4 +23,4 @@ function MainSection({ Movie }) {
 	);
 }
 
-export default MainSection;
+export default BackgroundSection;
