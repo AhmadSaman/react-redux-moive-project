@@ -16,7 +16,6 @@ function Actor() {
 			});
 	}, []);
 
-	console.log(actorData);
 	if (actorData.isLoading) return <div>loading</div>;
 
 	return <SingleActor actorData={actorData.data} />;
