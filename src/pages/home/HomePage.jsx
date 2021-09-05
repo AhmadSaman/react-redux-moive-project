@@ -7,18 +7,20 @@ import MostPopular from './mostPopular';
 
 function HomePage() {
 	const dispatch = useDispatch();
-	const states = useSelector((state) => ({
-		loading: state.moviestore?.loading,
-		popular: state.moviestore?.popular.results,
-	}));
-
+	const states = useSelector((state) => state);
 	useEffect(() => {
 		dispatch(fetchTrendingAndPopular());
 	}, []);
+
+	if (states.moviesStore.loading) {
+		return <p>Loading</p>;
+	}
+
 	return (
 		<>
-			<MainSection />
-			{states.loading ? <MostPopular Movies={states.popular} /> : ''}
+			<MainSection Movie={states.moviesStore.popular.results[9]} />
+
+			<MostPopular Movies={states.moviesStore.popular.results} />
 		</>
 	);
 }
