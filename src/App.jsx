@@ -11,13 +11,14 @@ import Bookmarks from './pages/Bookmarks';
 import Signup from './pages/auth/Signup';
 import Signin from './pages/auth/Signin';
 import Header from './components/shared/NavBar';
+import Footer from './components/shared/Footer';
 
 function App() {
 	return (
-		<div className="App">
-			<Header />
-
+		<div className="">
 			<BrowserRouter>
+				<Header />
+
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/movies" component={Movies} />
@@ -28,6 +29,7 @@ function App() {
 					<Route exact path="/signup" component={Signup} />
 					<Route exact path="/login" component={Signin} />
 				</Switch>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);
