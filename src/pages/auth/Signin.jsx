@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, Button, Container, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import firebase from '../../firebase';
 import { login } from '../../store/duck/userReducer';
 
 function Signin() {
+	const history = useHistory();
 	const dispatch = useDispatch();
 	const [formData, setFormData] = useState({
 		email: '',
@@ -21,7 +23,12 @@ function Signin() {
 			.then((userCredential) => {
 				const { user } = userCredential;
 				dispatch(login({ ...formData, id: user.uid }));
+
+				history.push('/');
 			});
+	}
+	function handleLogin() {
+		history.push('/signup');
 	}
 	return (
 		<Container className="m-5">
@@ -55,6 +62,12 @@ function Signin() {
 					<Button variant="primary" type="submit">
 						Submit
 					</Button>
+					<div className="my-3">
+						<p>If you don&apos;t have Account </p>
+						<Button variant="primary" onClick={() => handleLogin()}>
+							signup
+						</Button>
+					</div>
 				</Form>
 			</Row>
 		</Container>
