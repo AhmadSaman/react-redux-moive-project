@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 function Poster({ img }) {
-	return (
-		<div>
-			<img src={`https://image.tmdb.org/t/p/w200/${img}`} alt="" />
-		</div>
-	);
+	return <Card.Img src={`https://image.tmdb.org/t/p/w200/${img}`} alt="" />;
 }
 
 Poster.propTypes = {
