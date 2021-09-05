@@ -18,7 +18,7 @@ function Actors() {
 		actors: state.moviesStore.actors?.results,
 	}));
 
-	console.log(actorsData.actors);
+	console.log(actorsData);
 
 	if (actorsData.loading) return <div>is loading</div>;
 	return (

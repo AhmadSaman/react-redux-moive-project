@@ -26,12 +26,11 @@ export const fetchMovies = createAsyncThunk(
 export const fetchActors = createAsyncThunk(
 	'moviesStore/fetchActors',
 	(pageNo) => {
-		const actors = `
-    https://api.themoviedb.org/3/person/popular?api_key=c8b25cf3edbf1c810fc3746d2e6f7d62&language=en-US&page=${pageNo}`;
+		const actors = `https://api.themoviedb.org/3/person/popular?api_key=c8b25cf3edbf1c810fc3746d2e6f7d62&language=en-US&page=${pageNo}`;
 		return axios.get(actors).then((response) => ({ actors: response.data }));
 	}
 );
-export const fetchMovie = createAsyncThunk('moviesStore/fetchActors', (id) => {
+export const fetchMovie = createAsyncThunk('moviesStore/movie', (id) => {
 	const movie = `https://api.themoviedb.org/3/movie/${id}?api_key=c8b25cf3edbf1c810fc3746d2e6f7d62&language=en-US`;
 	return axios.get(movie).then((response) => response.data);
 });
