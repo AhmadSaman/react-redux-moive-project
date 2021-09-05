@@ -8,7 +8,10 @@ import Movie from './pages/Movie';
 import Actors from './pages/Actors';
 import Actor from './pages/Actor';
 import Bookmarks from './pages/Bookmarks';
+import Signup from './pages/auth/Signup';
+import Signin from './pages/auth/Signin';
 import Header from './components/shared/NavBar';
+import Footer from './components/shared/Footer';
 
 function App() {
 	return (
@@ -22,7 +25,10 @@ function App() {
 					<Route exact path="/actors" component={Actors} />
 					<Route exact path="/actor/:id" component={Actor} />
 					<Route exact path="/bookmarks" component={Bookmarks} />
+					<Route exact path="/signup" component={Signup} />
+					<Route exact path="/login" component={Signin} />
 				</Switch>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

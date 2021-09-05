@@ -39,7 +39,7 @@ const moviesSlice = createSlice({
 		movies: [],
 		actors: [],
 		trending: [],
-		loading: false,
+		loading: true,
 	},
 	extraReducers: {
 		// handle async actions: pending, fulfilled, rejected (for errors)
