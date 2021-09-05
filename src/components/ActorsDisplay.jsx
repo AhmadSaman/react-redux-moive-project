@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Poster from './shared/Poster';
 import ActorDetail from './shared/ActorDetail';
 
 function ActorsDisplay({ actor }) {
 	return (
 		<Col lg={3} md={4} sm={6} xs={12}>
-			<Poster img={actor.profile_path} />
+			<Link to={`/actor/${actor.id}`}>
+				<Poster img={actor.profile_path} />
+			</Link>
 			<ActorDetail id={actor.id} actorName={actor.name} />
 		</Col>
 	);
