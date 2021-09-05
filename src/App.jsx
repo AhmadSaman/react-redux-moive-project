@@ -10,12 +10,12 @@ import Actor from './pages/Actor';
 import Bookmarks from './pages/Bookmarks';
 import Signup from './pages/auth/Signup';
 import Signin from './pages/auth/Signin';
-// import Header from './components/shared/NavBar';
+import Header from './components/shared/NavBar';
 
 function App() {
 	return (
 		<div className="App">
-			{/* <Header /> */}
+			<Header />
 
 			<BrowserRouter>
 				<Switch>
