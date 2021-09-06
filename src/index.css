@@ -84,7 +84,7 @@ code {
   color: white;
   transition: width 1s, height 1s, margin 1s;
 }
-.movie-info .movie-h1 {
+.movie-info h1 {
   font-family: "MyFont";
   font-size: 100px;
 }
@@ -210,7 +210,7 @@ code {
     margin-top: 0;
   }
   .poster-image{
-    height: 700px;
+    height: auto;
   }
   
   
