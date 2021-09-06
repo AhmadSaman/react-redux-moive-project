@@ -30,6 +30,7 @@ function Header() {
 	return (
 		<>
 			<Navbar
+				bg="dark"
 				collapseOnSelect
 				expand="lg"
 				fixed="top"

@@ -22,7 +22,7 @@ function Actors() {
 
 	if (actorsData.loading) return <div>is loading</div>;
 	return (
-		<Container>
+		<Container className="mx-auto my-2">
 			<Row>
 				{/* <Search onSearch={handleSearch} /> */}
 				{actorsData.actors
