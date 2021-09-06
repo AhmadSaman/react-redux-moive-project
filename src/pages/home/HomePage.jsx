@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTrendingAndPopular } from '../../store/duck/moviesReducer';
 import MainSection from './mainSection';
 import MostPopular from './mostPopular';
+import Trend from './Trending';
 
 function HomePage() {
 	const dispatch = useDispatch();
@@ -11,17 +12,19 @@ function HomePage() {
 	useEffect(() => {
 		dispatch(fetchTrendingAndPopular());
 	}, []);
+	console.log(states);
 
 	if (states.moviesStore.loading) {
 		return <p>Loading</p>;
 	}
 
 	return (
-		<>
+		<div className="App">
 			<MainSection Movie={states.moviesStore.popular.results[9]} />
 
 			<MostPopular Movies={states.moviesStore.popular.results} />
-		</>
+			<Trend Movies={states.moviesStore.trending.results} />
+		</div>
 	);
 }
 

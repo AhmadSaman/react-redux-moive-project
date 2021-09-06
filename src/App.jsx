@@ -11,12 +11,10 @@ import Bookmarks from './pages/Bookmarks';
 import Header from './components/shared/NavBar';
 
 function App() {
-	console.log('test');
 	return (
-		<div className="App">
-			<Header />
-
+		<div className="">
 			<BrowserRouter>
+				<Header />
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/movies" component={Movies} />

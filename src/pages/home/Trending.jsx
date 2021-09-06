@@ -3,16 +3,16 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { BsFillStarFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-function MostPopular({ Movies }) {
+function Trend({ Movies }) {
 	return (
 		<>
-			<h1 className="most-popular-h1">Most Popular Movies</h1>
+			<h1 className="most-popular-h1">Trending Movies</h1>
 			<div className="most-popular-sec">
 				<Container>
 					<Row>
 						{Movies.map(
 							(data, index) =>
-								index < 12 && (
+								index < 6 && (
 									<Col lg={2} className="most-popular-image">
 										<Link to={`/movie/${data.id}`}>
 											<img
@@ -45,4 +45,4 @@ function MostPopular({ Movies }) {
 	);
 }
 
-export default MostPopular;
+export default Trend;
