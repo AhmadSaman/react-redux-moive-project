@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,24 +9,10 @@ import { logout } from '../store/duck/userReducer';
 function Header() {
 	const states = useSelector((state) => state);
 	const dispatch = useDispatch();
-	const [scroll, setscroll] = useState(false);
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.pageYOffset > 1) {
-				setscroll(true);
-			} else if (window.pageYOffset < 1) {
-				setscroll(false);
-			}
-		};
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+
 	function handleLogout() {
 		dispatch(logout());
 	}
-	console.log(states.userStore.uid);
 	return (
 		<>
 			<Navbar
@@ -34,7 +20,7 @@ function Header() {
 				expand="lg"
 				fixed="top"
 				variant="dark"
-				className={scroll ? 'scrolled-navbar' : 'navbar'}
+				className="scrolled-navbar"
 			>
 				<Container className="nav">
 					<Navbar.Brand>
