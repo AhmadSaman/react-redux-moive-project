@@ -15,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .App {
-  overflow-x: hidden;
   background-color: black;
 }
 
