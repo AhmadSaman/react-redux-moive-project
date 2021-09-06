@@ -16,6 +16,7 @@ function Movie() {
 	if (states.moviesStore.loading) {
 		return <p>Loading</p>;
 	}
+
 	return states.moviesStore.popular.results.map((data) => (
 		<>
 			{Number(params.id) === data.id ? (
